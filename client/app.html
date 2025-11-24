@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Task Prioritizer</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Smart Task Prioritizer</h1>
+    <form id="task-form">
+      <label for="taskTitle">Task Title:</label>
+      <input type="text" id="taskTitle" name="taskTitle" required />
+
+      <label for="task_type">Task Type:</label>
+      <select id="task_type" required>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Study">Study</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>Duration:</label>
+      <div class="duration-input">
+        <input type="number" id="duration_hours" placeholder="Hours" min="0">
+        <input type="number" id="duration_minutes" placeholder="Minutes" min="0" max="59">
+      </div>
+
+      <label for="urgency">Urgency (1-5):</label>
+      <input type="number" id="urgency" min="1" max="5" required>
+
+      <label for="importance_to_goals">Importance to Goals (1-5):</label>
+      <input type="number" id="importance_to_goals" min="1" max="5" required>
+
+      <label>Depends on You:</label>
+      <label><input type="radio" name="depends_on_you" value="1" required> Yes</label>
+      <label><input type="radio" name="depends_on_you" value="0" required> No</label>
+
+      <label for="stress_level">Stress Level (1-5):</label>
+      <input type="number" id="stress_level" min="1" max="5" required>
+
+      <label for="motivation_level">Motivation Level (1-5):</label>
+      <input type="number" id="motivation_level" min="1" max="5" required>
+
+      <label for="enjoyment_level">Enjoyment Level (1-5):</label>
+      <input type="number" id="enjoyment_level" min="1" max="5" required>
+
+      <label>Task Blocking Others:</label>
+      <label><input type="radio" name="task_blocking_others" value="1" required> Yes</label>
+      <label><input type="radio" name="task_blocking_others" value="0" required> No</label>
+
+      <label for="deadline_urgency">Deadline Urgency:</label>
+      <select id="deadline_urgency" required>
+        <option value="No Deadline">No Deadline</option>
+        <option value="Overdue">Overdue</option>
+        <option value="Today">Today</option>
+        <option value="Tomorrow">Tomorrow</option>
+        <option value="This Week">This Week</option>
+      </select>
+
+      <button type="submit">Predict Priority</button>
+    </form>
+    <div id="result" class="result"></div>
+    <a href="todo.html">View To-Do List</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
